@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: a_bit_of_life_production
-  username: a_bit_of_life
-  password: <%= ENV["A_BIT_OF_LIFE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
