@@ -6,7 +6,7 @@ function SignUpForm() {
         username: "",
         email: "",
         password: "",
-        passwordConfirm: ""
+        password_confirmation: ""
     })
 
     function handleChange(e) {
@@ -14,7 +14,8 @@ function SignUpForm() {
     }
 
     function handleSubmit(e) {
-        
+        e.preventDefault();
+
     }
 
     return (
