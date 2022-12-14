@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import SignUpForm from "./SignUpForm";
 
 function SignUpPage() {
+
+    // console.log("hello")
     return (
         <div>
-            {/* <SignUpForm /> */}
+            <SignUpForm />
         </div>
     )
 }
 
-export default SignUpPage
+
+
+export default SignUpPage;

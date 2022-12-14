@@ -19,7 +19,7 @@ export const userSlice = createSlice({
             state.profile = {};
             state.isAuthenticated = false;
         }
-    },
+    }
 });
 
 export const { setUser, clearUser } = userSlice.actions;
