@@ -1,16 +1,38 @@
 class ApplicationController < ActionController::API
-    # include ActionController::Cookies
+before_action :authorized
 
-    # def hello_world
-    #     session[:count] = (session[:count] || 0) + 1
-    #     render json: { count: session[:count] }
-    # end
-
-    before_action :configure_permitted_parameters, if: :devise_controller?
-
-    protected
-
-    def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up)
+    def encode_token payload
+        JWT.encode(payload, 'a_s3cr3t')
     end
+
+    def auth_header
+        request.headers['Authorization']
+    end
+
+    def decoded_token
+        if auth_header
+            token = auth_header.split(' ')[1]
+            begin
+                JWT.decode(token, 'a_s3cr3t', true, algorithm: 'HS256')
+            rescue JWT::DecodeError
+                nil
+            end
+        end
+    end
+
+    def current_user
+        if decoded_token
+          user_id = decoded_token[0]['user_id']
+          @user = User.find_by(id: user_id)
+        end
+    end
+    
+    def logged_in?
+        !!current_user
+    end
+
+    def authorized
+        render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+    end
+    
 end
