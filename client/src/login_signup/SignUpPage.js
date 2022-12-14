@@ -3,10 +3,7 @@ import React, { useState } from "react";
 function SignUpPage() {
     return (
         <div>
-            <form>
-                <input>
-                </input>
-            </form>
+            {/* <SignUpForm /> */}
         </div>
     )
 }
