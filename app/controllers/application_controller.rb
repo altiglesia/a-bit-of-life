@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
 before_action :authorized
+rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     def encode_token payload
         JWT.encode(payload, 'a_s3cr3t')
@@ -35,4 +36,10 @@ before_action :authorized
         render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
     
+private
+
+    def record_not_found error
+        render json: {error: "#{error.model} not found"}, status: :not_found
+    end
+
 end
