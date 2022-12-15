@@ -2,10 +2,12 @@ import './App.css';
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { setUser } from "./store/user.js";
-import Home from "./Home.js";
-import LoginPage from "./login_signup/LoginPage.js"
-import SignUpPage from "./login_signup/SignUpPage.js";
+import { setUser } from "./components/store/user.js";
+import LandingPage from "./components/LandingPage.js"
+import Home from "./components/Home.js";
+import LoginPage from "./components/login_signup/LoginPage.js"
+import SignUpPage from "./components/login_signup/SignUpPage.js";
+import Quiz from "./components/quiz/Quiz.js";
 
 function App() {
 
@@ -46,9 +48,11 @@ function App() {
     // <BrowserRouter>
       <div className="App">
         <Routes>
+        <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
       </div>
     // </BrowserRouter>
