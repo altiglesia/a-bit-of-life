@@ -1,21 +1,24 @@
 import React from "react";
 
-function QuizItem({ quizQuestion }) {
+function QuizItem({ quizQuestion, showNextQuestion }) {
     const { question, options } = quizQuestion;
 
     const choices = options.map((option, index) => (
-        <option key={index} value={index}>
-            {option}
-        </option>
+        <li key={index} value={index}>
+            <button onClick={handleClick}>
+                {option}
+            </button>
+        </li>
     ));
 
+    function handleClick() {
+        showNextQuestion()
+    }
 
     return (
         <div>
-            <li>
-                <h5>{question}</h5>
-                <select>{choices}</select>
-            </li>
+            <h1>{question}</h1>
+            <ul id="quizOptions">{choices}</ul>
         </div>
     )
 }

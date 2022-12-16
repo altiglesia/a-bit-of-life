@@ -20,42 +20,46 @@ function SignUpForm() {
 
     return (
         <div>
-            <form>
-                <label>Sign up</label>
+            <form id="signUpForm">
+                <label>sign up</label>
                 <br/>
-                <input 
+                <input
+                    id="name" 
                     type="text" 
-                    label="what's your name?"
+                    placeholder="what's your name?"
                     autoComplete="off"
                     name="username"
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
                 <input 
+                    id="email"
                     type="text" 
-                    label="email"
+                    placeholder="email address?"
                     autoComplete="off"
                     name="email"
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
-                <input 
+                <input
+                    id="password"
                     type="password" 
-                    label="password"
+                    placeholder="password"
                     autoComplete="off"
                     name="password"
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
-                <input 
+                <input
+                    id="passwordConfirm" 
                     type="password" 
-                    label="passwordConfirm"
+                    placeholder="password confirmation"
                     autoComplete="off"
                     name="passwordConfirm"
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
-                <input type="submit" value="Submit" />
+                <input id="submitSignUp" type="submit" value="submit" />
             </form>
         </div>
     )

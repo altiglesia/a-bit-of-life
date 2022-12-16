@@ -13,6 +13,10 @@ function LoginForm(){
         navigate("/home");
     }
 
+    const handleSignUpNav = () => {
+        navigate("/signup");
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         fetch("/api/v1/login", {
@@ -44,25 +48,26 @@ function LoginForm(){
 
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
+            <form id="loginForm" onSubmit={handleSubmit}>
+                <label>login</label>
                 <br/>
                 <input
                     type="text"
-                    label="username"
+                    placeholder="username"
                     name="username"
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 <br/>
                 <input
                     type="password"
-                    label="password"
+                    placeholder="password"
                     name="password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <br/>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="submit" />
             </form>
+            <button onClick={handleSignUpNav}>New Here? Sign Up!</button>
         </div>
     )
 }
