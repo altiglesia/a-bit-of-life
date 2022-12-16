@@ -9,15 +9,24 @@ function Home() {
         navigate("/");
     }
 
+    const goToCableList = () => {
+        navigate("/cables");
+    }
+
     function handleLogOut(){
         localStorage.clear();
         goBackToLanding();
+    }
+
+    function handleGoToMapList() {
+        goToCableList();
     }
 
     return (
         <div>
             <h1>this is your home page</h1>
             <button onClick={handleLogOut}>Logout</button>
+            <button onClick={handleGoToMapList}>Logout</button>
         </div>
     )
 }
