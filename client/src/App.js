@@ -8,6 +8,7 @@ import Home from "./components/Home.js";
 import LoginPage from "./components/login_signup/LoginPage.js"
 import SignUpPage from "./components/login_signup/SignUpPage.js";
 import Quiz from "./components/quiz/Quiz.js";
+import SubmarineCables from './components/play/SubmarineCables';
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/cables" element={<SubmarineCables />} />
         </Routes>
       </div>
     // </BrowserRouter>

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :quiz_questions, only: [:index]
+
+  resources :submarine_cables, only: [:index]
 end

@@ -41,7 +41,7 @@ function Quiz() {
             // setQuizResults();
             // send a patch request to the backend that updates the quiz result of the User signed in (either 1 or 0)
         }
-        return console.log(binaryNumberOfCharacter)
+        return binaryNumberOfCharacter
     }
 
     // on click, the number will be generated
@@ -62,7 +62,7 @@ function Quiz() {
     //         body: JSON.stringify({
     //             user: {
     //                 username,
-    //                 quiz_result: ""
+    //                 quiz_result: binaryNumberOfCharacter
     //             }
     //         })
     //     })

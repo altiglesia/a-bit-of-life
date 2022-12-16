@@ -53,3 +53,10 @@ gem "active_model_serializers", "~> 0.10.13"
 
 gem "faker", "~> 3.0"
 
+gem "net-http", "~> 0.3.1"
+
+gem "uri", "~> 0.12.0"
+
+gem "openssl", "~> 3.0"
+
+gem "pry", "~> 0.14.1"
