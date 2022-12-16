@@ -1,5 +1,5 @@
 class QuizQuestionsController < ApplicationController
-skip_before_action :authorized
+# skip_before_action :authorized
 
     def index
         quiz_questions = QuizQuestion.all

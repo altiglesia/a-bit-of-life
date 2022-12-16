@@ -1,12 +1,156 @@
-.welcome_to_a_bit_of_life {
+* {background-color: black}
+* {color: white}
+
+/* LANDING PAGE */
+
+#WelcomePage {
   font-size: 40px;
   font-family: "LoRes 15 OT";
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
-  text-align: left;
-  position: absolute;
-  left: 204px;
-  top: 263.5px;
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 3;
+}
+
+button.Enter {
+  font-size: 18px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  border: none;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+button#signUpFromLanding {
+  top: 50%;
+  left: 50%;
+}
+
+button#logInFromLanding {
+  top: 54%;
+  left: 50%;
+}
+
+/* SIGNUP AND LOGIN PAGES */
+
+form {
+  border-width: 0.5px;
+  border-color: rgb(255, 255, 255);
+  border-style: dashed;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+form input::placeholder {
+  color: #b1b1b1;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form label {
+  font-size: 25px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* SIGNUP */
+
+form#signUpForm {
+  width: 246px;
+  height: 284px;
+}
+
+form#signUpForm label {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+form#signUpForm input {
+  font-size: 18px;
+  text-align: center;
+  font-family: "LoRes 15 OT";
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  width: 223px;
+  height: 28px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 15%;
+  position: relative;
+  z-index: 5;
+  margin: 2%;
+}
+
+/* LOGIN PAGE */
+
+form#loginForm {
+  width: 246px;
+  height: 163px;
+}
+
+form#loginForm label {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+form#loginForm input {
+  font-size: 18px;
+  text-align: center;
+  font-family: "LoRes 15 OT";
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  width: 223px;
+  height: 28px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10%;
+  position: relative;
+  z-index: 5;
+  margin: 2%;
+}
+
+/* form#signUpForm input#name {
+  top: 50%;
+} */
+/* 
+position: absolute;
+left: 296px;
+top: 233px; */
+
+
+ul#quizOptions {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
 }
