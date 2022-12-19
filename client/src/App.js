@@ -34,10 +34,7 @@ function App() {
           throw new Error("unauthorized request");
         }
       })
-      // .then(data => {
-      //   console.log(data)
-      //   dispatch(setUser(data))
-      // })
+
       .catch((err) => {
         console.error(err);
       });

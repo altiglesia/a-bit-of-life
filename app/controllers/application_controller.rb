@@ -16,8 +16,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     def decoded_token
         if auth_header
-            byebug
-            token = auth_header.split(' ')[1]
+            token = auth_header
             # token
             begin
                 JWT.decode(token, 'a_s3cr3t', true, { algorithm: 'HS256' })
