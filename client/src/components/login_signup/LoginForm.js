@@ -33,9 +33,11 @@ function LoginForm(){
         })
         .then(res => {
             if (res.ok) {
-                res.json().then((res) => localStorage.setItem("token", res.jwt))
+                res.json().then((res) => {
+                    localStorage.setItem("token", res.jwt)
+                    dispatch(setUser(res.user));
+                })
                 // console.table(res.json());
-                dispatch(setUser);
                 navigateUserHome();
             } else {
                 return res.text().then((text) => Promise.reject(text))
