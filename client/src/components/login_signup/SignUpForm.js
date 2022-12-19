@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { setUser } from "../store/user.js";
+import { useNavigate } from "react-router-dom";
 
 
 function SignUpForm() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [userData, setUserData] = useState({
         username: "",
         email: "",
@@ -9,18 +14,41 @@ function SignUpForm() {
         password_confirmation: ""
     })
 
+    const navigateUserHome = () => {
+        navigate("/home");
+    }
+
     function handleChange(e) {
-        console.log(e.target.value)
+        setUserData({ ...userData, [e.target.name]: e.target.value })
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-
+        fetch("/api/v1/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({user: userData})
+        })
+        .then(res => {
+            if (res.ok) {
+                res.json().then((res) => localStorage.setItem("token", res.jwt))
+                // console.table(res.json());
+                dispatch(setUser);
+                navigateUserHome();
+            } else {
+                return res.text().then((text) => Promise.reject(text))
+            }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }
 
     return (
         <div>
-            <form id="signUpForm">
+            <form id="signUpForm" onSubmit={handleSubmit}>
                 <label>sign up</label>
                 <br/>
                 <input
@@ -29,6 +57,7 @@ function SignUpForm() {
                     placeholder="what's your name?"
                     autoComplete="off"
                     name="username"
+                    value={userData.username}
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
@@ -38,6 +67,7 @@ function SignUpForm() {
                     placeholder="email address?"
                     autoComplete="off"
                     name="email"
+                    value={userData.email}
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
@@ -47,6 +77,7 @@ function SignUpForm() {
                     placeholder="password"
                     autoComplete="off"
                     name="password"
+                    value={userData.password}
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>
@@ -55,7 +86,8 @@ function SignUpForm() {
                     type="password" 
                     placeholder="password confirmation"
                     autoComplete="off"
-                    name="passwordConfirm"
+                    name="password_confirmation"
+                    value={userData.password_confirmation}
                     onChange={(e) => handleChange(e)}
                 />
                 <br/>

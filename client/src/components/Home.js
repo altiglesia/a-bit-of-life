@@ -24,9 +24,9 @@ function Home() {
 
     return (
         <div>
-            <h1>this is your home page</h1>
-            <button onClick={handleLogOut}>Logout</button>
-            <button onClick={handleGoToMapList}>Logout</button>
+            <h1>welcome back</h1>
+            <button id="logout" onClick={handleLogOut}>Logout</button>
+            <button onClick={handleGoToMapList}>Paths</button>
         </div>
     )
 }

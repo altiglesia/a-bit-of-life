@@ -1,3 +1,5 @@
+import byte_sprite_sheet from "../../assets/byte_sprite_sheet.png"
+
 function ByteSprite({ image, movementDimensions, top, left }) {
 
     const { y, x, h, w } = movementDimensions;
@@ -11,9 +13,10 @@ function ByteSprite({ image, movementDimensions, top, left }) {
             left: `${left}px`,
             height: `${h}px`,
             width: `${w}px`,
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${byte_sprite_sheet})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: `-${x}px -${y}px`,
+            backgroundColor: "transparent",
         }}
     />
 }
