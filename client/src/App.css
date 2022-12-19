@@ -1,4 +1,4 @@
-/* * {background-color: black} */
+* {background-color: black}
 * {color: white}
 
 /* LANDING PAGE */
@@ -147,7 +147,6 @@ form#loginForm input {
 position: absolute;
 left: 296px;
 top: 233px; */
-
 
 ul#quizOptions {
   list-style-type: none; /* Remove bullets */

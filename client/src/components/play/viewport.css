@@ -1,7 +1,17 @@
 #viewportContainer{
     position: relative;
     overflow: hidden;
-    /* border: 3px solid pink; */
     border-radius: 4px;
-    /* background-color: #1e1e2e; */
+    background-color: #000000;
+    
 }
+
+@-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }

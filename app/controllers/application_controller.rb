@@ -2,11 +2,12 @@ class ApplicationController < ActionController::API
 # before_action :authorized
 rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-    exp = Time.now.to_i + 24 * 3600
-    exp_payload = { data: 'data', exp: exp }
+    # exp = Time.now.to_i + 24 * 3600
+    # exp = (Time.now + 60).to_i
+    # exp_payload = { data: 'data', exp: exp }
 
-    def encode_token exp_payload
-        JWT.encode(exp_payload, 'a_s3cr3t')
+    def encode_token payload
+        JWT.encode(payload, 'a_s3cr3t', "HS256")
     end
 
     def auth_header
@@ -17,7 +18,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
         if auth_header
             token = auth_header.split(' ')[1]
             begin
-                JWT.decode(token, 'a_s3cr3t', true, algorithm: 'HS256')
+                JWT.decode(token, 'a_s3cr3t', true, { algorithm: 'HS256' })
             rescue JWT::ExpiredSignature
                 # Handle expired token, e.g. logout user or deny access
                 nil
