@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { PLAYER_FRAMES } from "../config/constants";
-import getNextTile from "../utilities/get-next-tile";
+import getNextTile from "../components/utilities/getNextTile";
 
 // credit to Raquel Román-Rodriguez https://dev.to/raquii/using-two-dimensional-arrays-to-build-a-walkable-game-map-in-react-22e7
 

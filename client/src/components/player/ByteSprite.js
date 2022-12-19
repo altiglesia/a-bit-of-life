@@ -1,4 +1,4 @@
-function Sprite({ image, movementDimensions, top, left }) {
+function ByteSprite({ image, movementDimensions, top, left }) {
 
     const { y, x, h, w } = movementDimensions;
 
@@ -18,4 +18,4 @@ function Sprite({ image, movementDimensions, top, left }) {
     />
 }
 
-export default Sprite;
+export default ByteSprite;

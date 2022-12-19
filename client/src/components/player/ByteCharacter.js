@@ -1,6 +1,6 @@
-import Sprite from "./ByteSprite";
+import ByteSprite from "./ByteSprite"
 
-function Character({ sprite, playerDimensions, top, left, frame = 0, direction = 0 }) {
+function ByteCharacter({ sprite, playerDimensions, top, left, frame = 0, direction = 0 }) {
 
     const { h, w } = playerDimensions;
     
@@ -19,4 +19,4 @@ function Character({ sprite, playerDimensions, top, left, frame = 0, direction =
     )
 }
 
-export default Character;
+export default ByteCharacter;
