@@ -9,6 +9,7 @@ import LoginPage from "./components/login_signup/LoginPage.js"
 import SignUpPage from "./components/login_signup/SignUpPage.js";
 import Quiz from "./components/quiz/Quiz.js";
 import SubmarineCables from './components/play/SubmarineCables';
+import Viewport from './components/play/Viewport';
 
 function App() {
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/cables" element={<SubmarineCables />} />
+          <Route path="/travelpath" element={<Viewport />} />
         </Routes>
       </div>
     // </BrowserRouter>

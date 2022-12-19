@@ -15,33 +15,29 @@ function Viewport() {
     const { direction, animationFrame, position, walk } = useWalk();
 
     useKeyboard((e) => {
-        if (!paused) {
             e.preventDefault()
 
             switch (e.keyCode) {
                 case 40:
                 case 83:
-                    if(!working) return walk('down')
+                    return walk('down')
                     break;
                 case 37:
                 case 65:
-                    if(!working) return walk('left')
+                    return walk('left')
                     break;
                 case 39:
                 case 68:
-                    if(!working) return walk('right')
+                    return walk('right')
                 case 38:
                 case 87:
-                    if(!working) return walk('up')
+                    return walk('up')
                     break;
                 case 13:
                 case 32:
                     console.log(position)
                 default: ;
             }
-
-        }
-
     })
 
     return (
