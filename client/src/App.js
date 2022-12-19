@@ -13,38 +13,36 @@ import Viewport from './components/play/Viewport';
 
 function App() {
 
-  // const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.rootReducer.user.profile);
   
   const dispatch = useDispatch();
-  // useEffect(() => {
 
-  //   let token = localStorage.getItem("token");
-  //   if (token) {
-  //     fetch("/api/v1/profile", {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: token,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         return res.json();
-  //       } else if (res.status === "401") {
-  //         throw new Error("unauthorized request");
-  //       }
-  //     })
-  //     .then(data => {
-  //       console.log(data)
-  //       dispatch(setUser(data))
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  //   } else {
-  //     return
-  //   }
+  useEffect(() => {
 
-  // }, [dispatch])
+    let token = localStorage.getItem("token");
+    if (token) {
+      fetch("/api/v1/profile", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      })
+      .then((res) => {
+        if (res.ok) {
+          res.json().then((res) => dispatch(setUser(res.user)))
+        } else if (res.status === "401") {
+          throw new Error("unauthorized request");
+        }
+      })
+      // .then(data => {
+      //   console.log(data)
+      //   dispatch(setUser(data))
+      // })
+      .catch((err) => {
+        console.error(err);
+      });
+    }
+  }, [dispatch])
 
   return (
     // <BrowserRouter>

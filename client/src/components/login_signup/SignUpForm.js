@@ -14,8 +14,8 @@ function SignUpForm() {
         password_confirmation: ""
     })
 
-    const navigateUserHome = () => {
-        navigate("/home");
+    const navigateUserQuiz= () => {
+        navigate("/quiz");
     }
 
     function handleChange(e) {
@@ -36,7 +36,7 @@ function SignUpForm() {
                 res.json().then((res) => localStorage.setItem("token", res.jwt))
                 // console.table(res.json());
                 dispatch(setUser);
-                navigateUserHome();
+                navigateUserQuiz();
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }

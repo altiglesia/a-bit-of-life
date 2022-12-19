@@ -9,9 +9,9 @@ export const userSlice = createSlice({
     reducers: {
         setUser: (state, action) => {
             state.profile = {
-                id: action.payload.id,
                 email: action.payload.email,
-                username: action.payload.username
+                username: action.payload.username,
+                quiz_results: action.payload.quiz_results
             };
             state.isAuthenticated = true;
         },

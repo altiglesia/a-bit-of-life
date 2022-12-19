@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
 // if user is Logged in, show everything on home page
@@ -27,6 +27,9 @@ function Home() {
             <h1>welcome back</h1>
             <button id="logout" onClick={handleLogOut}>Logout</button>
             <button onClick={handleGoToMapList}>Paths</button>
+            <Link to="/quiz">
+                Go to Quiz
+            </Link>
         </div>
     )
 }

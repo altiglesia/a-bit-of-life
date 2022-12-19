@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizItem from "./QuizItem";
+import { useSelector } from "react-redux";
+// import { setUser } from "../store/user";
 
 function Quiz() {
     const [quizQuestions, setQuizQuestions] = useState([]);
     const [questionIndex, setQuestionIndex] = useState(0);
-    const [quizResults, setQuizResults] = useState({quiz_result: null});
+    // const [quizResults, setQuizResults] = useState({quiz_result: null});
 
     const navigate = useNavigate();
+    const username = useSelector(state => state.rootReducer.user.profile.username)
 
     const navigateUserHome = () => {
         navigate("/home");
@@ -25,48 +28,45 @@ function Quiz() {
     }, [])
 
     function showNextQuestion() {
-        let binaryNumberOfCharacter;
         if (questionIndex < 9) {
             setQuestionIndex(i => i + 1)
         } else {
             // invoke another function here to send a patch request to backend
-            if (Math.random() < 0.5) {
-                binaryNumberOfCharacter = "one"
-            } else if (Math.random() > 0.5) {
-                // console.log(Math.random())
-                binaryNumberOfCharacter = "zero"
-                // console.log(binaryNumberOfCharacter)
-            }
-        navigateUserHome();
+            findValueOfCharacter();
+            navigateUserHome();
             // setQuizResults();
             // send a patch request to the backend that updates the quiz result of the User signed in (either 1 or 0)
         }
-        return binaryNumberOfCharacter
+    }
+    
+    function findValueOfCharacter() {
+        let binaryNumberOfCharacter;
+        if (Math.random() < 0.5) {
+            binaryNumberOfCharacter = true
+            updateQuizResult(binaryNumberOfCharacter)
+        } else if (Math.random() > 0.5) {
+            // console.log(Math.random())
+            binaryNumberOfCharacter = false
+            updateQuizResult(binaryNumberOfCharacter)
+            // console.log(binaryNumberOfCharacter)
+        }
+        return binaryNumberOfCharacter;
     }
 
-    // on click, the number will be generated
-
-    // set condition logic
-    // if Math.random(0...1.0) < 5 {
-        // return "You are a 1"
-    // } else {
-    //     you are a 0
-    // }
-
-    // function updateQuizResult() {
-    //     fetch("/api/v1/profile", {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             user: {
-    //                 username,
-    //                 quiz_result: binaryNumberOfCharacter
-    //             }
-    //         })
-    //     })
-    // }
+    function updateQuizResult(binaryNumberOfCharacter) {
+        fetch("/api/v1/profile", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user: {
+                    username,
+                    quiz_results: binaryNumberOfCharacter
+                }
+            })
+        })
+    }
 
     const questionsAndAnswers = quizQuestions.map((quizQuestion) => (
         <QuizItem 
@@ -78,6 +78,7 @@ function Quiz() {
 
     return (
         <section>
+            <h5>You've been turned into a Bit. Are you a 0 or 1?</h5>
             <div>{questionsAndAnswers[questionIndex]}</div>
         </section>
     )
