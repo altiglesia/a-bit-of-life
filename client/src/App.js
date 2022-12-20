@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useCallback } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from "./components/store/user.js";
 // import ProtectedRoute from './components/ProtectedRoute';
 import LandingPage from "./components/LandingPage.js"
@@ -32,21 +32,36 @@ function App() {
       })
       .then((res) => {
         if (res.ok) {
-          return res.json()
+          res.json().then((res) => (
+            dispatch(setUser(res.user))
+          ))
         } else if (res.status === "401") {
           throw new Error("unauthorized request");
         }
       })
-      .then((res) => {
-        dispatch(setUser(res.user))
-      })
+      .then(
+        checkQuizResults())
       .catch((err) => {
         console.error(err);
       });
     } else {
       goBackToLanding();
     }
-  }, [goBackToLanding, dispatch])
+  }, [dispatch])
+
+  // debugger
+
+  const quizResults = useSelector(state => state.rootReducer.user.profile.quiz_results)
+  function checkQuizResults() {
+     if (quizResults === "true" || "false" ) {
+      // debugger
+      console.log(quizResults)
+      navigate("/home")
+    } else {
+      console.log(quizResults)
+      navigate("/quiz")
+    }
+  }
 
   return (
       <div className="App">
@@ -54,6 +69,8 @@ function App() {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/quiz" element={<Quiz />} />
+
+
             <Route path="/cables" element={<SubmarineCables />} />
             <Route path="/travelpath" element={<Viewport />} />
             <Route path="/" element={<LandingPage />} /> 
