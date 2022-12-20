@@ -1,5 +1,5 @@
 import './viewport.css'
-import { VIEWPORT_SIZE } from '../../config/constants';
+import { VIEWPORT_SIZE_HEIGHT, VIEWPORT_SIZE_WIDTH } from '../../config/constants';
 // import { useDispatch } from 'react-redux';
 
 import useWalk from '../../hooks/useWalk';
@@ -41,7 +41,11 @@ function Viewport() {
     })
 
     return (
-        <div id="viewportContainer" style={{ width: VIEWPORT_SIZE, height: VIEWPORT_SIZE }}>
+        <div id="viewportContainer" 
+            style={{
+                width: VIEWPORT_SIZE_WIDTH, 
+                height: VIEWPORT_SIZE_HEIGHT,
+                margin: "50%" }}>
 
             <Player
                 frame={animationFrame}
@@ -56,8 +60,8 @@ function Viewport() {
             <div
                 id="viewportBG"
                 style={{
-                    width: VIEWPORT_SIZE,
-                    height: VIEWPORT_SIZE,
+                    width: VIEWPORT_SIZE_WIDTH,
+                    height: VIEWPORT_SIZE_HEIGHT,
                     zIndex: -1,
                     backgroundColor: "#1e1e2e"
                 }}

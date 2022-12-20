@@ -1,4 +1,5 @@
-export const VIEWPORT_SIZE = 320;
+export const VIEWPORT_SIZE_HEIGHT = 320;
+export const VIEWPORT_SIZE_WIDTH = 640;
 
 export const PLAYER_FRAMES = 4;
 export const PLAYER_DIMENSIONS = { h: 48, w: 32 };
