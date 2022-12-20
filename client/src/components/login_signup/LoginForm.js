@@ -8,10 +8,6 @@ function LoginForm(){
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    
-    const navigateUserHome = () => {
-        navigate("/home");
-    }
 
     const handleSignUpNav = () => {
         navigate("/signup");
@@ -20,7 +16,6 @@ function LoginForm(){
     const quizResult = useSelector(state => state.rootReducer.user.profile.quiz_results)
 
     const checkQuizResults = () => {
-        // debugger
         if (quizResult === "zero") {
         console.log(quizResult)
         navigate("/home")
