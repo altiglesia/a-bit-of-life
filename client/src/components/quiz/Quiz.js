@@ -31,11 +31,9 @@ function Quiz() {
         if (questionIndex < 9) {
             setQuestionIndex(i => i + 1)
         } else {
-            // invoke another function here to send a patch request to backend
             findValueOfCharacter();
             navigateUserHome();
-            // setQuizResults();
-            // send a patch request to the backend that updates the quiz result of the User signed in (either 1 or 0)
+        
         }
     }
     
