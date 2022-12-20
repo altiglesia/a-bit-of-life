@@ -33,21 +33,22 @@ function Quiz() {
         } else {
             findValueOfCharacter();
             navigateUserHome();
-        
         }
     }
     
     function findValueOfCharacter() {
         let binaryNumberOfCharacter;
         if (Math.random() < 0.5) {
-            binaryNumberOfCharacter = true
+            binaryNumberOfCharacter = "zero"
+            console.log(binaryNumberOfCharacter)
             updateQuizResult(binaryNumberOfCharacter)
         } else if (Math.random() > 0.5) {
             // console.log(Math.random())
-            binaryNumberOfCharacter = false
+            binaryNumberOfCharacter = "one"
             updateQuizResult(binaryNumberOfCharacter)
             // console.log(binaryNumberOfCharacter)
         }
+        console.log(binaryNumberOfCharacter)
         return binaryNumberOfCharacter;
     }
 

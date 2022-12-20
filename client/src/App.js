@@ -18,7 +18,8 @@ function App() {
 
   const goBackToLanding = useCallback(() => {
     navigate("/");
-  }, [navigate])
+  }, [])
+
 
   useEffect(() => {
 
@@ -39,29 +40,32 @@ function App() {
           throw new Error("unauthorized request");
         }
       })
-      .then(
-        checkQuizResults())
+      // .then(checkQuizResults())
       .catch((err) => {
         console.error(err);
       });
     } else {
       goBackToLanding();
     }
-  }, [dispatch])
+  }, [dispatch, goBackToLanding])
 
   // debugger
 
-  const quizResults = useSelector(state => state.rootReducer.user.profile.quiz_results)
-  function checkQuizResults() {
-     if (quizResults === "true" || "false" ) {
-      // debugger
-      console.log(quizResults)
-      navigate("/home")
-    } else {
-      console.log(quizResults)
-      navigate("/quiz")
-    }
-  }
+  // const quizResult = useSelector(state => state.rootReducer.user.profile.quiz_results)
+
+  // function checkQuizResults() {
+  //   // debugger
+  //    if (quizResult === "zero") {
+  //     // console.log(quizResult)
+  //     navigate("/home")
+  //   } else if (quizResult === "one") {
+  //     navigate("/home")
+  //   } else {
+  //     console.log(quizResult)
+  //     navigate("/quiz")
+  //   }
+  // }
+
 
   return (
       <div className="App">
@@ -69,13 +73,11 @@ function App() {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/quiz" element={<Quiz />} />
-
-
             <Route path="/cables" element={<SubmarineCables />} />
             <Route path="/travelpath" element={<Viewport />} />
             <Route path="/" element={<LandingPage />} /> 
             <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage  />} />
             </Routes>
         </div>
       </div>
