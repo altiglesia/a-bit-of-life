@@ -20,22 +20,23 @@ function Viewport() {
             switch (e.keyCode) {
                 case 40:
                 case 83:
-                    return walk('down')
+                    walk('down')
                     break;
                 case 37:
                 case 65:
-                    return walk('left')
+                    walk('left')
                     break;
                 case 39:
                 case 68:
-                    return walk('right')
+                    walk('right')
+                    break;
                 case 38:
                 case 87:
-                    return walk('up')
+                    walk('up')
                     break;
                 case 13:
                 case 32:
-                    console.log(position)
+                    break;
                 default: ;
             }
     })
