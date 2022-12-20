@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from "../store/user.js";
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,21 @@ function LoginForm(){
 
     const handleSignUpNav = () => {
         navigate("/signup");
+    }
+
+    const quizResult = useSelector(state => state.rootReducer.user.profile.quiz_results)
+
+    const checkQuizResults = () => {
+        // debugger
+        if (quizResult === "zero") {
+        console.log(quizResult)
+        navigate("/home")
+        } else if (quizResult === "one") {
+        navigate("/home")
+        } else {
+        console.log(quizResult)
+        navigate("/quiz")
+        }
     }
 
     function handleSubmit(e) {
@@ -38,7 +53,8 @@ function LoginForm(){
                     dispatch(setUser(res.user));
                 })
                 // console.table(res.json());
-                navigateUserHome();
+                checkQuizResults();
+                // navigateUserHome();
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }

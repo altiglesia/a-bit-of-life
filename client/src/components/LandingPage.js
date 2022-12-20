@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function LandingPage() {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ function LandingPage() {
     function handleSignUpClick() {
         goToSignUpPage();
     }
-
+    
     return (
         <div>
             <h1 id="WelcomePage">welcome to a bit of life</h1>
