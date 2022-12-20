@@ -2,9 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
-// if user is Logged in, show everything on home page
     const navigate = useNavigate();
-    
     const goBackToLanding = () => {
         navigate("/");
     }
@@ -12,7 +10,7 @@ function Home() {
     const goToCableList = () => {
         navigate("/cables");
     }
-
+    
     function handleLogOut(){
         localStorage.clear();
         goBackToLanding();
@@ -22,6 +20,8 @@ function Home() {
         goToCableList();
     }
 
+
+    
     return (
         <div>
             <h1>welcome back</h1>
@@ -32,6 +32,7 @@ function Home() {
             </Link>
         </div>
     )
+
 }
 
 export default Home

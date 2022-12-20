@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function SignUpForm() {
     const navigate = useNavigate();
+    // const history = useHistory();
     const dispatch = useDispatch();
     const [userData, setUserData] = useState({
         username: "",
@@ -33,14 +34,15 @@ function SignUpForm() {
         })
         .then(res => {
             if (res.ok) {
-                res.json().then((res) => localStorage.setItem("token", res.jwt))
-                // console.table(res.json());
-                dispatch(setUser(res.user));
-                navigateUserQuiz();
+                res.json().then((res) => {
+                    localStorage.setItem("token", res.jwt)
+                    dispatch(setUser(res.user));
+                })        
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }
         })
+        .then(navigateUserQuiz())
         .catch((err) => {
           console.error(err);
         });
