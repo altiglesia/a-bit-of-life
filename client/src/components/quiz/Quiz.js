@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizItem from "./QuizItem";
 import { useSelector } from "react-redux";
-// import { setUser } from "../store/user";
 
 function Quiz() {
     const [quizQuestions, setQuizQuestions] = useState([]);
     const [questionIndex, setQuestionIndex] = useState(0);
-    // const [quizResults, setQuizResults] = useState({quiz_result: null});
 
     const navigate = useNavigate();
     const username = useSelector(state => state.rootReducer.user.profile.username)

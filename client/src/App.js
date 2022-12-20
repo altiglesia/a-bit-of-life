@@ -1,9 +1,8 @@
 import './App.css';
 import { useEffect, useCallback } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setUser } from "./components/store/user.js";
-// import ProtectedRoute from './components/ProtectedRoute';
 import LandingPage from "./components/LandingPage.js"
 import Home from "./components/Home.js";
 import LoginPage from "./components/login_signup/LoginPage.js"
@@ -48,24 +47,6 @@ function App() {
       goBackToLanding();
     }
   }, [dispatch, goBackToLanding])
-
-  // debugger
-
-  // const quizResult = useSelector(state => state.rootReducer.user.profile.quiz_results)
-
-  // function checkQuizResults() {
-  //   // debugger
-  //    if (quizResult === "zero") {
-  //     // console.log(quizResult)
-  //     navigate("/home")
-  //   } else if (quizResult === "one") {
-  //     navigate("/home")
-  //   } else {
-  //     console.log(quizResult)
-  //     navigate("/quiz")
-  //   }
-  // }
-
 
   return (
       <div className="App">
