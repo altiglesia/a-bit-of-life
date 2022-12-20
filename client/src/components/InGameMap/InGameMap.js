@@ -10,7 +10,6 @@ function InGameMap({ x }) {
                 position: "absolute",
                 top: 0,
                 left: -x,
-
             }}
         >
 

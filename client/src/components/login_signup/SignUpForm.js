@@ -35,7 +35,7 @@ function SignUpForm() {
             if (res.ok) {
                 res.json().then((res) => localStorage.setItem("token", res.jwt))
                 // console.table(res.json());
-                dispatch(setUser);
+                dispatch(setUser(res.user));
                 navigateUserQuiz();
             } else {
                 return res.text().then((text) => Promise.reject(text))

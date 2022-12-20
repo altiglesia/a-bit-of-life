@@ -44,15 +44,17 @@ function App() {
   return (
     // <BrowserRouter>
       <div className="App">
-        <Routes>
-        <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/cables" element={<SubmarineCables />} />
-          <Route path="/travelpath" element={<Viewport />} />
-        </Routes>
+        <div id="allContent">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/quiz" element={<Quiz />} />
+              <Route path="/cables" element={<SubmarineCables />} />
+              <Route path="/travelpath" element={<Viewport />} />
+            </Routes>
+        </div>
       </div>
     // </BrowserRouter>
   );
