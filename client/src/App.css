@@ -1,5 +1,7 @@
 * {background-color: black}
 * {color: white}
+* {font-family: "LoRes 15 OT"}
+* {font-weight: bold}
 
 div.App {
   align-content: center;
@@ -58,10 +60,10 @@ button#logInFromLanding {
 /* SIGNUP AND LOGIN PAGES */
 
 form {
-  border-width: 0.5px;
+  border-width: 4px;
   border-color: rgb(255, 255, 255);
-  border-style: dashed;
-  position: absolute;
+  border-style: solid;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -82,10 +84,16 @@ form label {
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* SIGNUP */
+
+div#signUpDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 
 form#signUpForm {
   width: 246px;

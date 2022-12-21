@@ -48,7 +48,7 @@ function SignUpForm() {
     }
 
     return (
-        <div>
+        <div id="signUpDiv">
             <form id="signUpForm" onSubmit={handleSubmit}>
                 <label>sign up</label>
                 <br/>
