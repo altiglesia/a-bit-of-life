@@ -1,5 +1,7 @@
 * {background-color: black}
 * {color: white}
+* {font-family: "LoRes 15 OT"}
+* {font-weight: bold}
 
 div.App {
   align-content: center;
