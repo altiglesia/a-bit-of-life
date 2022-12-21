@@ -5,9 +5,9 @@ function SignUpPage() {
 
     // console.log("hello")
     return (
-        <div>
+        <>
             <SignUpForm />
-        </div>
+        </>
     )
 }
 
