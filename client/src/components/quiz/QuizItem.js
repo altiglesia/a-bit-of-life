@@ -1,18 +1,16 @@
 import React from "react";
+import useKeyboard from "../../hooks/useKeyboard";
 
 function QuizItem({ quizQuestion, showNextQuestion }) {
     const { question, options } = quizQuestion;
 
     const choices = options.map((option, index) => (
         <li key={index} value={index}>
-            <input type="radio" className="nes-radio" name="answer" checked onChange={(e) => console.log(e.target.value)}/>
+            <input id="arrow" type="radio" className="nes-radio" name="answer" checked onChange={(e) => console.log(e.target.value)}/>
                 <span onClick={handleClick}>
-                    {/* <button > */}
-                        {option}
-                    {/* </button> */}
+                    {option}
                 </span>
         </li>
-
     ));
 
     function handleClick() {

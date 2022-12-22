@@ -25,11 +25,11 @@ function Home() {
     return (
         <div>
             <h1>welcome back</h1>
-            <button id="logout" onClick={handleLogOut}>Logout</button>
-            <button onClick={handleGoToMapList}>Paths</button>
-            <Link to="/quiz">
+            <button id="logout" className="homeBtn" onClick={handleLogOut}>Logout</button>
+            <button id="accessPathList" className="homeBtn" onClick={handleGoToMapList}>Paths</button>
+            {/* <Link to="/quiz">
                 Go to Quiz
-            </Link>
+            </Link> */}
         </div>
     )
 
