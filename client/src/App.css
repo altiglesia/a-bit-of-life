@@ -67,6 +67,33 @@ button#logInFromLanding {
   left: 50%;
 }
 
+/* HOME PAGE */
+
+button.homeBtn {
+  font-size: 18px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  border: white solid;
+  border-width: 1px;
+  border-radius: 2px;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+button#logout {
+  top: 50%;
+  left: 50%;
+}
+
+button#accessPathList {
+  top: 54%;
+  left: 50%;
+}
+
 /* SIGNUP AND LOGIN PAGES */
 
 form {

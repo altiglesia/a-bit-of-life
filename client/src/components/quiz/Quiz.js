@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import QuizItem from "./QuizItem";
 import { useSelector } from "react-redux";
 
+
 function Quiz() {
     const [quizQuestions, setQuizQuestions] = useState([]);
     const [questionIndex, setQuestionIndex] = useState(0);
