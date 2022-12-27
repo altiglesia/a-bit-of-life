@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { clearUser } from "./store/user.js";
 
 function LandingPage() {
+
+    useEffect(() => {
+        clearUser()
+        localStorage.clear()
+    }, [])
+
     const navigate = useNavigate();
     
     const goToLogInPage = () => {

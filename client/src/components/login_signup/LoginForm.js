@@ -47,9 +47,7 @@ function LoginForm(){
                     localStorage.setItem("token", res.jwt)
                     dispatch(setUser(res.user));
                 })
-                // console.table(res.json());
-                checkQuizResults();
-                // navigateUserHome();
+            checkQuizResults();
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }
