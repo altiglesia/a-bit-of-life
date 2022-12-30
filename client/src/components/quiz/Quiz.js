@@ -75,7 +75,7 @@ function Quiz() {
     ))
 
     return (
-        <div id="quizPage" >
+        <div id="quizPage">
             {/* <h5>You've been turned into a Bit. Are you a 0 or 1?</h5>  */}
             {/* // Turn into its own component */}
             {questionsAndAnswers[questionIndex]}
