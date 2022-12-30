@@ -13,13 +13,20 @@ function LoginForm(){
         navigate("/signup");
     }
 
+    const navigateUserHome = () => {
+        navigate("/home");
+    }
+
     const quizResult = useSelector(state => state.rootReducer.user.profile.quiz_results)
 
     const checkQuizResults = () => {
+        debugger;
+        console.log(quizResult)
         if (quizResult === "zero") {
         console.log(quizResult)
         navigate("/home")
         } else if (quizResult === "one") {
+        console.log(quizResult)
         navigate("/home")
         } else {
         console.log(quizResult)
@@ -46,8 +53,9 @@ function LoginForm(){
                 res.json().then((res) => {
                     localStorage.setItem("token", res.jwt)
                     dispatch(setUser(res.user));
+                    // checkQuizResults();
                 })
-            checkQuizResults();
+                navigateUserHome();
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }
