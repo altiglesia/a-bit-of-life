@@ -1,4 +1,5 @@
 import React from "react";
+import globe from "../../assets/globe.gif";
 
 function StoryCard({ storyCard, showNextStoryCard }) {
     const { content, id } = storyCard;
@@ -11,10 +12,12 @@ function StoryCard({ storyCard, showNextStoryCard }) {
 
     // }
 
+    const globe = require('../../assets/globe.gif')
+
     return (
         <div id="storyCardContainer" onClick={handleClick}>
             <h3>{content}</h3>
-            <image></image>
+            <img src={globe}/>
         </div>
     )
 }
