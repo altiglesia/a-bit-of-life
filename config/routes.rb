@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :quiz_questions, only: [:index]
 
   resources :submarine_cables, only: [:index]
+
+  resources :story_cards, only: [:index]
 end

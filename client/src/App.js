@@ -3,7 +3,8 @@ import { useEffect, useCallback } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { setUser } from "./components/store/user.js";
-import LandingPage from "./components/LandingPage.js"
+import Story from './components/intro/Story';
+import LandingPage from "./components/LandingPage.js";
 import Home from "./components/Home.js";
 import LoginPage from "./components/login_signup/LoginPage.js"
 import SignUpPage from "./components/login_signup/SignUpPage.js";
@@ -53,6 +54,7 @@ function App() {
         <div id="allContent">
           <Routes>
             <Route path="/home" element={<Home />} />
+            <Route path="/story" element={<Story />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/cables" element={<SubmarineCables />} />
             <Route path="/travelpath" element={<Viewport />} />

@@ -81,30 +81,54 @@
 # )
 # puts "Done seeding!"
 
-require 'uri'
-require 'net/http'
-require 'openssl'
-require 'pry'
+# require 'uri'
+# require 'net/http'
+# require 'openssl'
+# require 'pry'
 
-puts "seeding submarinecablemap"
-url = URI("https://www.submarinecablemap.com/api/v3/cable/cable-geo.json")
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-### Fetch request
-request = Net::HTTP::Get.new(url)
-request["accept"] = "application/json"
-### Response
-response = http.request(request)
-response_hash = JSON.parse(response.read_body)
-## Create SubmarineCable instances ##
-response_hash["features"].map do |feature| 
-    SubmarineCable.create(
-        name: feature["properties"]["name"],
-        color: feature["properties"]["color"],
-        feature_id: feature["properties"]["feature_id"],
-        coordinates: feature["properties"]["coordinates"]
-    )
-end
-"fetch successful"
+# puts "seeding submarinecablemap"
+# url = URI("https://www.submarinecablemap.com/api/v3/cable/cable-geo.json")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# ### Fetch request
+# request = Net::HTTP::Get.new(url)
+# request["accept"] = "application/json"
+# ### Response
+# response = http.request(request)
+# response_hash = JSON.parse(response.read_body)
+# ## Create SubmarineCable instances ##
+# response_hash["features"].map do |feature| 
+#     SubmarineCable.create(
+#         name: feature["properties"]["name"],
+#         color: feature["properties"]["color"],
+#         feature_id: feature["properties"]["feature_id"],
+#         coordinates: feature["properties"]["coordinates"]
+#     )
+# end
+# "fetch successful"
 
-puts "Done seeding submarinecablemap"
+# puts "Done seeding submarinecablemap"
+
+puts "seeding Story"
+
+StoryCard.create(
+    content: "In the year 2073, evil corporations rule the world. Motivated by greed and power, the corporations hold immense control over data and information to manipulate people all over the world."
+)
+
+StoryCard.create(
+    content: "Many technological advancements were made in the last decade. Humans no longer use their physical bodies to communicate and travel. Instead, individuals prefer to exist as a Bit, a logical state with one of two possible values – “0” or “1” – regardless of economic status. This continues to trouble the masses, causing rifts in social circles and stirring global politics."
+)
+
+StoryCard.create(
+    content: "There is a silver lining. While antiquated, telecommunication cables that carry digital data like Bits lie at the bottom of the ocean. Though you do not have any money, you can freely communicate and meet with others across the globe by traveling on these cables."
+)
+
+StoryCard.create(
+    content: "Your mission in this game is to gather seven other Bits to join your warren and become a Byte. In order to survive the chaos, building community is a must."
+)
+
+StoryCard.create(
+    content: "Welcome to a bit of life."
+)
+
+puts "done seeding story cards"

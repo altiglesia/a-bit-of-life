@@ -1,0 +1,2 @@
+class StoryCard < ApplicationRecord
+end
