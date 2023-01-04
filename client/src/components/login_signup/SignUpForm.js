@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { setUser } from "../store/user.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 function SignUpForm() {
@@ -94,6 +94,9 @@ function SignUpForm() {
                 <br/>
                 <input id="submitSignUp" type="submit" value="submit" />
             </form>
+            <Link to="/login">
+                <button>Already a Bit? Login!</button>
+            </Link>
         </>
     )
 };

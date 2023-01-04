@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './viewport.css'
 import { VIEWPORT_SIZE_HEIGHT, VIEWPORT_SIZE_WIDTH } from '../../config/constants';
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
-import { setUser } from "../store/user.js";
 
 import useWalk from '../../hooks/useWalk';
 import useKeyboard from '../../hooks/useKeyboard';
@@ -16,7 +14,6 @@ import InGameMap from "../InGameMap/InGameMap";
 function Viewport() {
     const { direction, animationFrame, position, walk } = useWalk()
     const currentCableName = useSelector(state => state.rootReducer.user.profile.current_cable_path)
-    const user = useSelector(state => state.rootReducer.user)
 
     useKeyboard((e) => {
             e.preventDefault()

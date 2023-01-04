@@ -35,23 +35,35 @@ function StoryCard({ storyCard, showNextStoryCard }) {
         }
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setImage(storyImage)
-        }, 32000);
+        let timer;
+        if (storyCard.id === 2) {
+            timer = setTimeout(() => {
+                setImage(storyImage)
+            }, 20000);
+        } else if (storyCard.id === 3) {
+            timer = setTimeout(() => {
+                setImage(storyImage)
+            }, 18000);
+        } else {
+            timer = setTimeout(() => {
+                setImage(storyImage)
+            }, 10000);
+        }
         return () => clearTimeout(timer);
     }, []);
-        
 
     return (
         <div id="storyCardContainer" onClick={handleClick}>
-            <TypeWriterEffect
-                textStyle={{ fontSize: "1.5em" }}
-                startDelay={100}
-                cursorColor="transparent"
-                text={content}
-                typeSpeed={100}
-                eraseSpeed={100}
-            />
+            <div>
+                <TypeWriterEffect
+                    textStyle={{ fontSize: "1.5em" }}
+                    startDelay={100}
+                    cursorColor="transparent"
+                    text={content}
+                    typeSpeed={50}
+                    eraseSpeed={100}
+                />
+            </div>
             <div style={{ margin: "10%" }}>
                 {image}
             </div>
