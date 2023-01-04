@@ -45,7 +45,6 @@ function CableJunctionPoint ({ cableObj }) {
         })
     }
 
-
     return (
         <div>
             <Link to="/travelpath">

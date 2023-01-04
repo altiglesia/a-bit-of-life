@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from "../store/user.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function LoginForm(){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    const handleSignUpNav = () => {
-        navigate("/signup");
-    }
 
     const navigateUserHome = () => {
         navigate("/home");
@@ -90,7 +86,9 @@ function LoginForm(){
                 <br/>
                 <input type="submit" value="submit" />
             </form>
-            <button onClick={handleSignUpNav}>New Here? Sign Up!</button>
+            <Link to="/signup">
+                <button>New Here? Sign Up!</button>
+            </Link>
         </div>
     )
 }

@@ -2,17 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizItem from "./QuizItem";
 import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { setUser } from "../store/user.js";
 
 
 function Quiz() {
     const [quizQuestions, setQuizQuestions] = useState([]);
     const [questionIndex, setQuestionIndex] = useState(0);
-
-    const navigate = useNavigate();
     const username = useSelector(state => state.rootReducer.user.profile.username)
+    const user = useSelector(state => state.rootReducer.user.profile)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const navigateUserHome = () => {
-        navigate("/home");
+    const navigateBinaryValue = () => {
+        navigate("/binaryValue");
     }
 
     useEffect(() => {
@@ -31,7 +34,7 @@ function Quiz() {
             setQuestionIndex(i => i + 1)
         } else {
             findValueOfCharacter();
-            navigateUserHome();
+            // navigateUserHome();
         }
     }
     
@@ -39,15 +42,11 @@ function Quiz() {
         let binaryNumberOfCharacter;
         if (Math.random() < 0.5) {
             binaryNumberOfCharacter = "zero"
-            console.log(binaryNumberOfCharacter)
             updateQuizResult(binaryNumberOfCharacter)
         } else if (Math.random() > 0.5) {
-            // console.log(Math.random())
             binaryNumberOfCharacter = "one"
             updateQuizResult(binaryNumberOfCharacter)
-            // console.log(binaryNumberOfCharacter)
         }
-        console.log(binaryNumberOfCharacter)
         return binaryNumberOfCharacter;
     }
 
@@ -64,6 +63,16 @@ function Quiz() {
                 }
             })
         })
+        .then((res) => {
+            if (res.ok) {
+              res.json().then((res) => {
+               dispatch(setUser({ ...user, quiz_results: res.quiz_results}))
+              })
+            navigateBinaryValue()
+            } else if (res.status === "401") {
+              throw new Error("unauthorized request");
+            }
+        })
     }
 
     const questionsAndAnswers = quizQuestions.map((quizQuestion) => (
@@ -76,8 +85,6 @@ function Quiz() {
 
     return (
         <div id="quizPage">
-            {/* <h5>You've been turned into a Bit. Are you a 0 or 1?</h5>  */}
-            {/* // Turn into its own component */}
             {questionsAndAnswers[questionIndex]}
         </div>
     )

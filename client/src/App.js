@@ -11,6 +11,7 @@ import SignUpPage from "./components/login_signup/SignUpPage.js";
 import Quiz from "./components/quiz/Quiz.js";
 import SubmarineCables from './components/play/SubmarineCables';
 import Viewport from './components/play/Viewport';
+import QuizResultPage from './components/quiz/QuizResultPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -61,6 +62,7 @@ function App() {
             <Route path="/" element={<LandingPage />} /> 
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage  />} />
+            <Route path="/binaryvalue" element={<QuizResultPage />} />
             </Routes>
         </div>
       </div>
