@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import Typewriter from "typewriter-effect";
 import TypeWriterEffect from 'react-typewriter-effect';
+import useKeyboard from "../../hooks/useKeyboard";
 
 function StoryCard({ storyCard, showNextStoryCard }) {
     const { content, id } = storyCard;
@@ -10,6 +11,15 @@ function StoryCard({ storyCard, showNextStoryCard }) {
         showNextStoryCard()
         // setImage(storyImage)
     }
+
+    useKeyboard((e) => {
+        switch(e.keyCode) {
+            case 13:
+                handleClick()
+                break;
+            default: ;
+        }
+    })
 
     const bit = require('../../assets/bit intro.jpg')
     const globe = require('../../assets/globe.gif')
@@ -23,7 +33,7 @@ function StoryCard({ storyCard, showNextStoryCard }) {
         } else if (storyCard.id === 3) {
             storyImage = <img src={globe} alt="globe"/>;
         }
-    
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setImage(storyImage)
@@ -37,12 +47,12 @@ function StoryCard({ storyCard, showNextStoryCard }) {
             <TypeWriterEffect
                 textStyle={{ fontSize: "1.5em" }}
                 startDelay={100}
-                cursorColor="white"
+                cursorColor="transparent"
                 text={content}
                 typeSpeed={100}
                 eraseSpeed={100}
             />
-            <div>
+            <div style={{ margin: "10%" }}>
                 {image}
             </div>
         </div>

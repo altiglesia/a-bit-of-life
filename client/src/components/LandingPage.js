@@ -29,7 +29,7 @@ function LandingPage() {
     
     return (
         <div>
-            <h1 id="WelcomePage">welcome to a bit of life</h1>
+            <h1 id="WelcomePage">a bit of life</h1>
             <button 
                 id="signUpFromLanding"
                 className="Enter"
