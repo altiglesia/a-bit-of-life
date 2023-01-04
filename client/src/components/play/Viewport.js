@@ -1,6 +1,10 @@
+import React, { useEffect } from 'react';
 import './viewport.css'
 import { VIEWPORT_SIZE_HEIGHT, VIEWPORT_SIZE_WIDTH } from '../../config/constants';
-// import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { setUser } from "../store/user.js";
 
 import useWalk from '../../hooks/useWalk';
 import useKeyboard from '../../hooks/useKeyboard';
@@ -10,9 +14,9 @@ import InGameMap from "../InGameMap/InGameMap";
 
 
 function Viewport() {
-    // const dispatch = useDispatch();
-
-    const { direction, animationFrame, position, walk } = useWalk();
+    const { direction, animationFrame, position, walk } = useWalk()
+    const currentCableName = useSelector(state => state.rootReducer.user.profile.current_cable_path)
+    const user = useSelector(state => state.rootReducer.user)
 
     useKeyboard((e) => {
             e.preventDefault()
@@ -42,32 +46,34 @@ function Viewport() {
     })
 
     return (
-        <div id="viewportContainer" 
-            style={{
-                width: VIEWPORT_SIZE_WIDTH, 
-                height: VIEWPORT_SIZE_HEIGHT,
-                margin: "50%" }}>
-
-            <Player
-                frame={animationFrame}
-                direction={direction}
-                position={position}
-            />
-
-            <InGameMap
-                x={position.left}
-            />
-
-            <div
-                id="viewportBG"
+        <>
+            <h2 id="cableName">{currentCableName}</h2>
+            <div id="viewportContainer" 
                 style={{
-                    width: VIEWPORT_SIZE_WIDTH,
+                    width: VIEWPORT_SIZE_WIDTH, 
                     height: VIEWPORT_SIZE_HEIGHT,
-                    zIndex: -1,
-                    backgroundColor: "#1e1e2e"
-                }}
-            />
-        </div>
+                    }}>
+                <Player
+                    frame={animationFrame}
+                    direction={direction}
+                    position={position}
+                />
+
+                <InGameMap
+                    x={position.left}
+                />
+
+                <div
+                    id="viewportBG"
+                    style={{
+                        width: VIEWPORT_SIZE_WIDTH,
+                        height: VIEWPORT_SIZE_HEIGHT,
+                        zIndex: -1,
+                        backgroundColor: "#1e1e2e"
+                    }}
+                />
+            </div>
+        </>
     )
 }
 

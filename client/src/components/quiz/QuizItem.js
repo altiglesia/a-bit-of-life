@@ -6,49 +6,37 @@ function QuizItem({ quizQuestion, showNextQuestion }) {
 
     const choices = options.map((option, index) => (
         <li key={index} value={index}>
-            <input id="arrow" type="radio" className="nes-radio" name="answer" checked onChange={(e) => console.log(e.target.value)} onClick={clickArrowRadio}/>
+            <input id="arrow" type="radio" className="nes-radio" name="answer" checked onChange={handleChange} />
                 <span>
                     {option}
                 </span>
         </li>
     ));
 
-    function clickArrowRadio() {
-        console.log("i'm clicked")
+    function handleChange(e) {
+        console.log(e.target.value)
     }
 
     useKeyboard((e) => {
-
         switch(e.keyCode) {
             case 13:
-                console.log('enter key hit')
                 showNextQuestion()
                 break;
             case 37:
-                console.log("Left key is pressed.");
-                clickArrowRadio();
+                document.querySelector('input').focus();
                 break;
             case 38:
-                console.log("Up key is pressed.");
-                clickArrowRadio();
+                document.querySelector('input').focus();
                 break;
             case 39:
-                console.log("Right key is pressed.");
-                clickArrowRadio();
+                document.querySelector('input').focus();
                 break;
             case 40:
-                console.log("Down key is pressed.");
-                clickArrowRadio();
-                break;         
+                document.querySelector('input').focus();
+                break;
+            default: ;
         }
     })
-
-    // window.addEventListener('keypress', function (e) {
-    //     if (e.key === 'Enter') {
-    //       // code for enter
-    //       showNextQuestion()
-    //     }
-    // });
     
     return (
         <div id="quizItem">

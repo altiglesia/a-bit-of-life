@@ -17,6 +17,10 @@ function LoginForm(){
         navigate("/home");
     }
 
+    const navigateToStory = () => {
+        navigate("/story");
+    }
+
     const quizResult = useSelector(state => state.rootReducer.user.profile.quiz_results)
 
     const checkQuizResults = () => {
@@ -55,7 +59,7 @@ function LoginForm(){
                     dispatch(setUser(res.user));
                     // checkQuizResults();
                 })
-                navigateUserHome();
+                navigateToStory();
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }

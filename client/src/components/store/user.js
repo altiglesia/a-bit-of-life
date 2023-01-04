@@ -11,7 +11,8 @@ export const userSlice = createSlice({
             state.profile = {
                 email: action.payload.email,
                 username: action.payload.username,
-                quiz_results: action.payload.quiz_results
+                quiz_results: action.payload.quiz_results,
+                current_cable_path: action.payload.current_cable_path
             };
             state.isAuthenticated = true;
         },

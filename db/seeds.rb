@@ -112,19 +112,19 @@
 puts "seeding Story"
 
 StoryCard.create(
-    content: "In the year 2073, evil corporations rule the world. Motivated by greed and power, the corporations hold immense control over data and information to manipulate people all over the world."
+    content: "In the year 2073, vile corporations rule the world. Motivated by greed and power, these corporations control data and information to manipulate people all over the world."
 )
 
 StoryCard.create(
-    content: "Many technological advancements were made in the last decade. Humans no longer use their physical bodies to communicate and travel. Instead, individuals prefer to exist as a Bit, a logical state with one of two possible values – “0” or “1” – regardless of economic status. This continues to trouble the masses, causing rifts in social circles and stirring global politics."
+    content: "Humans no longer use their physical bodies to interact. Now, the average person begins life as a Bit, a logical state with one of two possible values – “0” or “1”. Meanwhile, ruling corporations have the resources to travel as big as a terabyte. This divide continues to trouble the masses, causing rifts in social circles and stirring global politics."    
 )
 
 StoryCard.create(
-    content: "There is a silver lining. While antiquated, telecommunication cables that carry digital data like Bits lie at the bottom of the ocean. Though you do not have any money, you can freely communicate and meet with others across the globe by traveling on these cables."
+    content: "There is a silver lining. While antiquated, telecommunication cables that lie at the bottom of the ocean can carry digital data like Bits. As a mere Bit, you do not have any money or resources, but you can freely communicate and stealthily meet with others across the globe by traveling on these cables."
 )
 
 StoryCard.create(
-    content: "Your mission in this game is to gather seven other Bits to join your warren and become a Byte. In order to survive the chaos, building community is a must."
+    content: "Your mission in this game is to gather seven other Bits - regardless of their binary value - to join your band and become a Byte. In order to survive, you must build a community with others to rise up against the tyrants."    
 )
 
 StoryCard.create(

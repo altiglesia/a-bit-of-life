@@ -24,7 +24,7 @@ function Home() {
     
     return (
         <div>
-            <h1>welcome back</h1>
+            <h1>welcome back to a bit of life</h1>
             <button id="logout" className="homeBtn" onClick={handleLogOut}>Logout</button>
             <button id="accessPathList" className="homeBtn" onClick={handleGoToMapList}>Paths</button>
             {/* <Link to="/quiz">
