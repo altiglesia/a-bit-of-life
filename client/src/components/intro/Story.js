@@ -13,7 +13,6 @@ function Story() {
         navigate("/quiz");
     }
 
-
     useEffect(() => {
         fetch('/story_cards')
         .then((res) => {
