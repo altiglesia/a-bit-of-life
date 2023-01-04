@@ -207,3 +207,22 @@ ul#quizOptions li span {
   font-weight: bold;
   font-size: 18px;
 }
+
+/* STORY PAGE */
+
+div#storyPage {
+  width: 100vh;
+  /* height: 25vh; */
+}
+
+div#storyCardContainer {
+  display: flex;
+  flex-direction: row;
+  /* align-items: stretch; */
+}
+
+div#storyCardContainer p {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+  blinkTextCursor 500ms steps(44) infinite normal
+}
+
