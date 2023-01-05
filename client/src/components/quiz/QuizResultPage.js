@@ -15,12 +15,15 @@ function QuizResultPage() {
             style={{ 
                 padding: 0,
                 backgroundImage: `url(${certificateImage})`, 
-                height: "75vh",
-                width: "100vw", 
-                backgroundRepeat: "no-repeat" }}>
-            {/* <h2 id="binaryQuizResult">You are a {binaryValueResult}!</h2> */}
+                height: "450px",
+                width: "600px", 
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: "no-repeat" 
+                }}>
+            <h1 id="binaryQuizResult">You are a {binaryValueResult}!</h1>
             <Link to ="/home">
-                <button>home</button>
+                <button>what now?</button>
             </Link>
         </div>
     )

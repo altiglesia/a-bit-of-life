@@ -208,6 +208,25 @@ ul#quizOptions li span {
   font-size: 18px;
 }
 
+div#quizResultContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div#quizResultContainer h1 {
+  background-color: transparent;
+  color: black;
+  /* width: 30%; */
+  /* position: 'center'; */
+}
+
+div#quizResultContainer button {
+  background-color: transparent;
+  color: black;
+}
+
 /* STORY PAGE */
 
 div#storyPage {

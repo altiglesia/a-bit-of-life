@@ -8,7 +8,7 @@ function TravelPath(){
                     style={{
                         boxSizing: "border-box",
                         backgroundImage: `url(${path_map})`,
-                        backgroundRepeat: "no-repeat",
+                        backgroundRepeat: "repeat",
                         backgroundPosition: "0px 0px",
                         display: "inline-block",
                         width: "640px",
