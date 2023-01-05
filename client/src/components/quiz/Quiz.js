@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import QuizItem from "./QuizItem";
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../store/user.js";
 
 
@@ -67,7 +66,7 @@ function Quiz() {
         .then((res) => {
             if (res.ok) {
               res.json().then((res) => {
-               dispatch(console.log({ ...user, quiz_results: res.quiz_results}))
+               dispatch(setUser({ ...user, quiz_results: res.quiz_results}))
               })
             navigateBinaryValue()
             } else if (res.status === "401") {
