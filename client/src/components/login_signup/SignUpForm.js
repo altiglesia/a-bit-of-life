@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { setUser } from "../store/user.js";
+import user, { setUser } from "../store/user.js";
 import { useNavigate, Link } from "react-router-dom";
 
 
@@ -16,6 +16,10 @@ function SignUpForm() {
 
     const navigateUserQuiz= () => {
         navigate("/quiz");
+    }
+
+    const navigateToStory = () => {
+        navigate("/story");
     }
 
     function handleChange(e) {
@@ -36,12 +40,13 @@ function SignUpForm() {
                 res.json().then((res) => {
                     localStorage.setItem("token", res.jwt)
                     dispatch(setUser(res.user));
-                })        
+                })
+                navigateToStory();        
             } else {
                 return res.text().then((text) => Promise.reject(text))
             }
         })
-        .then(navigateUserQuiz())
+        // .then(navigateUserQuiz())
         .catch((err) => {
           console.error(err);
         });

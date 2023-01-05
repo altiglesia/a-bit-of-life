@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { clearUser } from "./store/user.js";
+import { RandomReveal } from "react-random-reveal";
 
 function LandingPage() {
 
@@ -8,40 +9,33 @@ function LandingPage() {
         clearUser()
         localStorage.clear()
     }, [])
-
-    const navigate = useNavigate();
-    
-    const goToLogInPage = () => {
-        navigate("/login");
-    }
-
-    const goToSignUpPage = () => {
-        navigate("/signup");
-    }
-
-    function handleLoginClick() {
-        goToLogInPage();
-    }
-
-    function handleSignUpClick() {
-        goToSignUpPage();
-    }
     
     return (
         <div>
-            <h1 id="WelcomePage">a bit of life</h1>
-            <button 
-                id="signUpFromLanding"
-                className="Enter"
-                onClick={handleSignUpClick}>
-                    signup
-            </button>
-            <button 
-                id="logInFromLanding" 
-                className="Enter" 
-                onClick={handleLoginClick}>
-                    login
-            </button>
+            <h1 id="WelcomePage">
+                <RandomReveal
+                    isPlaying
+                    duration={4}
+                    revealDuration={1.6}
+                    characterSet="01"
+                    characters="a bit of life"
+                    onComplete={() => ({ shouldRepeat: true, delay: 4 })}
+                />
+            </h1>
+            <Link to="/signup">
+                <button 
+                    id="signUpFromLanding"
+                    className="Enter">
+                        signup
+                </button>
+            </Link>
+            <Link to="/login">
+                <button 
+                    id="logInFromLanding" 
+                    className="Enter">
+                        login
+                </button>
+            </Link>
         </div>
     )
 }

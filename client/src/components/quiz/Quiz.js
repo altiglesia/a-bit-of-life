@@ -51,6 +51,7 @@ function Quiz() {
     }
 
     function updateQuizResult(binaryNumberOfCharacter) {
+        console.log(binaryNumberOfCharacter)
         fetch("/api/v1/profile", {
             method: "PATCH",
             headers: {
@@ -66,7 +67,7 @@ function Quiz() {
         .then((res) => {
             if (res.ok) {
               res.json().then((res) => {
-               dispatch(setUser({ ...user, quiz_results: res.quiz_results}))
+               dispatch(console.log({ ...user, quiz_results: res.quiz_results}))
               })
             navigateBinaryValue()
             } else if (res.status === "401") {
