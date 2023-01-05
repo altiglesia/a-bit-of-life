@@ -1,7 +1,7 @@
 import React from 'react';
 import './viewport.css'
 import { VIEWPORT_SIZE_HEIGHT, VIEWPORT_SIZE_WIDTH } from '../../config/constants';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import useWalk from '../../hooks/useWalk';
@@ -70,6 +70,9 @@ function Viewport() {
                     }}
                 />
             </div>
+            <Link to ="/home">
+                <button className="goToMainMenu">main menu</button>
+            </Link>
         </>
     )
 }

@@ -4,17 +4,23 @@
 * {font-weight: bold}
 
 div.App {
-  align-content: center;
+  /* align-content: center;
   display: flex;
-  flex-flow: column nowrap;
-  margin-top: 17%;
+  flex-direction: column; */
+  /* flex-flow: column nowrap; */
+  /* margin-top: 17%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 div#allContent {
-  align-self: center;
-  align-content: center;
+  /* align-self: center; */
+  justify-content: center;
   display: flex;
-  flex-flow: column wrap;
+  /* flex-flow: column wrap; */
 }
 
 /* LANDING PAGE */
@@ -69,19 +75,48 @@ button#logInFromLanding {
 
 /* HOME PAGE */
 
+div#mainMenu {
+  flex-direction: column;
+}
+
+div#mainMenu h1 {
+  font-size: 40px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
 button.homeBtn {
   font-size: 18px;
   font-family: "LoRes 15 OT";
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1.2;
-  border: white solid;
+  border: transparent solid;
   border-width: 1px;
   border-radius: 2px;
   text-align: center;
   position: fixed;
   transform: translate(-50%, -50%);
   z-index: 4;
+}
+
+button.homeBtn:focus {
+  outline: transparent;
+}
+
+button.homeBtn:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 2px;
+  border-color: transparent transparent;
 }
 
 button#logout {
@@ -96,7 +131,12 @@ button#accessPathList {
 
 /* SIGNUP AND LOGIN PAGES */
 
-form {
+div.signInUpPage {
+  display: flex;
+  justify-content: center;
+}
+
+div.signInUpPage form {
   border-width: 4px;
   border-color: rgb(255, 255, 255);
   border-style: solid;
@@ -153,10 +193,12 @@ div#quizPage {
 div#quizItem {
   background-color: #d8b8f8;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: stretch;
   gap: 1px;
   margin: 1%;
+  height: 50vh;
+  /* justify-content: center; */
 }
 
 div#quizOptionsContainer {
@@ -164,8 +206,10 @@ div#quizOptionsContainer {
   border: rgb(0, 0, 0);
   border-style: solid;
   border-radius: 4px;
-  width: 60%;
+  width: 65%;
   padding: 3px;
+  margin: 3px;
+  text-align: left;
 }
 
 div#quizOptionsContainer label {
@@ -177,6 +221,8 @@ div#questionContainer {
   border: rgb(0, 0, 0) solid;
   border-radius: 4px;
   padding: 3px;
+  margin: 3px;
+  text-align: left;
 }
 
 div#questionContainer h1 {
@@ -218,30 +264,139 @@ div#quizResultContainer {
 div#quizResultContainer h1 {
   background-color: transparent;
   color: black;
-  /* width: 30%; */
-  /* position: 'center'; */
 }
 
 div#quizResultContainer button {
-  background-color: transparent;
+  background-color: #e7aa18;
   color: black;
+  border: black solid;
+  border-radius: 2px;
+}
+
+div#quizResultContainer button:hover, button:active {
+  background-color: transparent;
+  color: white;
+  outline: none;
 }
 
 /* STORY PAGE */
 
 div#storyPage {
   width: 100vh;
-  /* height: 25vh; */
+  border: rgba(255, 255, 255, 0.655);
+  border-style: solid;
+  border-radius: 1px;
+}
+
+div#volumeIcon {
+  margin: 1%;
+}
+
+div#goToQuizButtonContainer {
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+}
+
+div#goToQuizButtonContainer button {
+  font-size: 18px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  border: white solid;
+  border-width: 1px;
+  border-radius: 2px;
+}
+
+div#goToQuizButtonContainer button:focus {
+  outline: transparent;
+}
+
+div#goToQuizButtonContainer button:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 2px;
+  border-color: transparent transparent;
 }
 
 div#storyCardContainer {
   display: flex;
   flex-direction: row;
-  /* align-items: stretch; */
+  height: 60vh;
 }
 
-div#storyCardContainer p {
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-  blinkTextCursor 500ms steps(44) infinite normal
+div#storyCardText {
+  margin: 2%;
+  width: 48%;
+  align-items: stretch;
 }
 
+div#storyCardImage {
+  width: 48%;
+  margin: 2%;
+  /* border-style: solid; */
+  align-self: center;
+}
+
+div#storyCardImage img {
+  width: 100%;
+  /* position:absolute; */
+  top:0;
+  -webkit-animation-name: fade;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 6s;
+  animation-name: fade;
+  animation-iteration-count: 1;
+  animation-duration: 6s;
+}
+
+@-webkit-keyframes fade {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fade {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* PATHS LIST */
+
+div#submarineCableListContainer {
+  overflow: scroll;
+  border: rgba(255, 255, 255, 0.655);
+  border-style: solid;
+  height: 50vh;
+  text-align: left;
+  font-size: 20px;
+}
+
+div#submarineCableListContainer::-webkit-scrollbar {
+  display: none;
+}
+
+div#submarineCableList h5:active {
+  color: green;
+}
+
+button.goToMainMenu {
+  font-size: 18px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  border: none;
+  text-align: center;
+  margin: 4px;
+}
+
+button.goToMainMenu:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 2px;
+  border-color: transparent transparent;
+}
+
+button.goToMainMenu:focus {
+  outline: transparent;
+}

@@ -46,8 +46,8 @@ function CableJunctionPoint ({ cableObj }) {
     }
 
     return (
-        <div>
-            <Link to="/travelpath">
+        <div id="submarineCableList">
+            <Link to="/travelpath" style={{ textDecoration: 'none' }}>
                 <h5 onClick={sendCurrentCablePath} value={cableObj.name}>{cableObj.name}</h5>
             </Link>
         </div>

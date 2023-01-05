@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CableJunctionPoint from "./CableJunctionPoint";
+import { Link } from 'react-router-dom';
 
 function SubmarineCables() {
     const [cablesList, setCablesList] = useState([])
@@ -28,9 +29,17 @@ function SubmarineCables() {
     ))
 
     return (
-        <div>
-            <ul>{mappedOutCablesList}</ul>
+        <>
+        <div id="submarineCableListTitle">
+            <h3>explore the submarine cables</h3>
         </div>
+            <div id="submarineCableListContainer">
+                <ul>{mappedOutCablesList}</ul>
+            </div>
+            <Link to ="/home">
+                <button className="goToMainMenu">main menu</button>
+            </Link>
+        </>
     )
 }
 

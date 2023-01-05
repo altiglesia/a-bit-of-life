@@ -42,17 +42,19 @@ function Story() {
 
     return (
         <div id="storyPage">
-            <IntroMusicPlayer />
-            <div id="storyCardBox">
-                {storyline[storyCardIndex]}
+            <div id="volumeIcon">
+                <IntroMusicPlayer />
             </div>
-            <div>
+            <div id="goToQuizButtonContainer">
                 {
                     takeQuizButton ? 
                     <button onClick={navigateToQuiz}>
                     Find Out If You're a 0 or 1
                     </button> : null 
                 }
+            </div>
+            <div id="storyCardBox">
+                {storyline[storyCardIndex]}
             </div>
         </div>
     )

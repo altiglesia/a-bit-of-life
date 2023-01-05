@@ -40,13 +40,13 @@ function QuizItem({ quizQuestion, showNextQuestion }) {
     
     return (
         <div id="quizItem">
+            <div id="questionContainer">
+                <h1>{question}</h1>
+            </div>
             <div id="quizOptionsContainer">
                 <label>
                     <ul id="quizOptions">{choices}</ul>
                 </label>
-            </div>
-            <div id="questionContainer">
-                <h1>{question}</h1>
             </div>
         </div>
     )

@@ -43,7 +43,7 @@ function StoryCard({ storyCard, showNextStoryCard }) {
         } else if (storyCard.id === 3) {
             timer = setTimeout(() => {
                 setImage(storyImage)
-            }, 18000);
+            }, 13000);
         } else {
             timer = setTimeout(() => {
                 setImage(storyImage)
@@ -54,7 +54,7 @@ function StoryCard({ storyCard, showNextStoryCard }) {
 
     return (
         <div id="storyCardContainer" onClick={handleClick}>
-            <div>
+            <div id="storyCardText">
                 <TypeWriterEffect
                     textStyle={{ fontSize: "1.5em" }}
                     startDelay={1800}
@@ -64,7 +64,7 @@ function StoryCard({ storyCard, showNextStoryCard }) {
                     eraseSpeed={100}
                 />
             </div>
-            <div style={{ margin: "10%" }}>
+            <div id="storyCardImage">
                 {image}
             </div>
         </div>

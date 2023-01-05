@@ -52,7 +52,7 @@ function App() {
 
   return (
       <div className="App">
-        <div id="allContent">
+        <div className="allContent">
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/story" element={<Story />} />
