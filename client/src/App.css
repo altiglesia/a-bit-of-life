@@ -4,9 +4,8 @@
 * {font-weight: bold}
 
 div.App {
-  /* align-content: center;
-  display: flex;
-  flex-direction: column; */
+  align-content: center;
+  flex-direction: column;
   /* flex-flow: column nowrap; */
   /* margin-top: 17%; */
   display: flex;
@@ -17,10 +16,8 @@ div.App {
 }
 
 div#allContent {
-  /* align-self: center; */
   justify-content: center;
   display: flex;
-  /* flex-flow: column wrap; */
 }
 
 /* LANDING PAGE */
@@ -131,11 +128,6 @@ button#accessPathList {
 
 /* SIGNUP AND LOGIN PAGES */
 
-div.signInUpPage {
-  display: flex;
-  justify-content: center;
-}
-
 div.signInUpPage form {
   border-width: 4px;
   border-color: rgb(255, 255, 255);
@@ -145,7 +137,6 @@ div.signInUpPage form {
   flex-wrap: wrap;
   padding: 0.5em;
   width: 246px;
-  transform: translate(-50%, -50%);
   z-index: 4;
   justify-content: center;
 }
@@ -290,6 +281,11 @@ div#storyPage {
 
 div#volumeIcon {
   margin: 1%;
+  display: flex;
+}
+
+div#volumeIcon img {
+  justify-content: left;
 }
 
 div#goToQuizButtonContainer {
@@ -329,7 +325,8 @@ div#storyCardContainer {
 div#storyCardText {
   margin: 2%;
   width: 48%;
-  align-items: stretch;
+  display: flex;
+  align-items: left;
 }
 
 div#storyCardImage {
@@ -398,5 +395,27 @@ button.goToMainMenu:active {
 }
 
 button.goToMainMenu:focus {
+  outline: transparent;
+}
+
+button.switchLoginSignUp {
+  font-size: 18px;
+  font-family: "LoRes 15 OT";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 1.2;
+  border: none;
+  text-align: center;
+  margin: 4px;
+}
+
+button.switchLoginSignUp:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 2px;
+  border-color: transparent transparent;
+}
+
+button.switchLoginSignUp:focus {
   outline: transparent;
 }

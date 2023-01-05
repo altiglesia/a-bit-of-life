@@ -100,7 +100,7 @@ function SignUpForm() {
                 <input id="submitSignUp" type="submit" value="submit" />
             </form>
             <Link to="/login">
-                <button>Already a Bit? Login!</button>
+                <button className="switchLoginSignUp">Already a Bit? Login!</button>
             </Link>
         </>
     )
