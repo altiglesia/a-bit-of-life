@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import user, { setUser } from "../store/user.js";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -7,11 +7,13 @@ import { useNavigate, Link } from "react-router-dom";
 function SignUpForm() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    // const emptyProfile = useSelector(state => console.log(state.rootReducer.user.profile))
     const [userData, setUserData] = useState({
         username: "",
         email: "",
         password: "",
-        password_confirmation: ""
+        password_confirmation: "",
+        quiz_results: ""
     })
 
     const navigateUserQuiz= () => {
@@ -39,6 +41,7 @@ function SignUpForm() {
             if (res.ok) {
                 res.json().then((res) => {
                     localStorage.setItem("token", res.jwt)
+                    // console.log({...user.profile})
                     dispatch(setUser(res.user));
                 })
                 navigateToStory();        
