@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import StoryCard from "./StoryCard";
+import IntroMusicPlayer from "./IntroMusicPlayer";
 
 function Story() {
     const [storyCards, setStoryCards] = useState([]);
@@ -8,7 +9,6 @@ function Story() {
     const [takeQuizButton, setTakeQuizButton] = useState(false);
 
     const navigate = useNavigate();
-
     const navigateToQuiz = () => {
         navigate("/quiz");
     }
@@ -41,12 +41,13 @@ function Story() {
     ))
 
     return (
-        <div>
-            <div id="storyPage">
+        <div id="storyPage">
+            <IntroMusicPlayer />
+            <div id="storyCardBox">
                 {storyline[storyCardIndex]}
             </div>
             <div>
-                { 
+                {
                     takeQuizButton ? 
                     <button onClick={navigateToQuiz}>
                     Find Out If You're a 0 or 1
