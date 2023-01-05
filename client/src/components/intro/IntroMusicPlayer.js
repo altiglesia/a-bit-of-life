@@ -31,7 +31,7 @@ import intro from "../../assets/a_bit_of_life_intro_mixdown.mp3"
     
       return (
         <div>
-          <img onClick={toggle} src={playing ? playIcon : muteIcon} alt="volumeIcon" />
+          <img onClick={toggle} src={playing ? playIcon : muteIcon} alt="volumeIcon" style={{ width: "40px"}} />
         </div>
       );
     };

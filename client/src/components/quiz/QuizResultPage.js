@@ -23,7 +23,7 @@ function QuizResultPage() {
                 }}>
             <h1 id="binaryQuizResult">You are a {binaryValueResult}!</h1>
             <Link to ="/home">
-                <button>what now?</button>
+                <button id="what now?">what now?</button>
             </Link>
         </div>
     )

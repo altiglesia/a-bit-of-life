@@ -21,7 +21,7 @@ function LoginPage() {
     // }
 
     return (
-        <div>
+        <div className="signInUpPage">
             <LoginForm />
         </div>
     )
