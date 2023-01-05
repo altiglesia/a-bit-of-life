@@ -87,7 +87,7 @@ function LoginForm(){
                 <input type="submit" value="submit" />
             </form>
             <Link to="/signup">
-                <button>New Here? Sign Up!</button>
+                <button className="switchLoginSignUp">New Here? Sign Up!</button>
             </Link>
         </div>
     )
