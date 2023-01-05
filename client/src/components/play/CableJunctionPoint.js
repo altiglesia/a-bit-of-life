@@ -20,7 +20,7 @@ function CableJunctionPoint ({ cableObj }) {
     }
 
     function sendCurrentCablePath() {
-        console.log(name)
+        // console.log(name)
         fetch("/api/v1/profile", {
             method: "PATCH",
             headers: {

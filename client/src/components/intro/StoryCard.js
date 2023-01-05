@@ -57,7 +57,7 @@ function StoryCard({ storyCard, showNextStoryCard }) {
             <div>
                 <TypeWriterEffect
                     textStyle={{ fontSize: "1.5em" }}
-                    startDelay={100}
+                    startDelay={1800}
                     cursorColor="transparent"
                     text={content}
                     typeSpeed={50}
