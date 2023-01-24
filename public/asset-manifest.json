@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cd827451.css",
+    "main.js": "/static/js/main.261346c3.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/globe.gif": "/static/media/globe.aab50269789bbd817dd9.gif",
+    "static/media/a_bit_of_life_intro_mixdown.mp3": "/static/media/a_bit_of_life_intro_mixdown.1fa77779ea154d4adb7a.mp3",
+    "static/media/certificate.jpg": "/static/media/certificate.f54a1d1850b8a1ab741b.jpg",
+    "static/media/path_map.png": "/static/media/path_map.f64d99b12871cb9121a1.png",
+    "static/media/corporations.jpg": "/static/media/corporations.47c2945c182e419aedb9.jpg",
+    "static/media/volumeOn.jpg": "/static/media/volumeOn.0575a4932b556712d9c5.jpg",
+    "index.html": "/index.html",
+    "main.cd827451.css.map": "/static/css/main.cd827451.css.map",
+    "main.261346c3.js.map": "/static/js/main.261346c3.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd827451.css",
+    "static/js/main.261346c3.js"
+  ]
+}

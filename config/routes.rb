@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :submarine_cables, only: [:index]
 
   resources :story_cards, only: [:index]
+
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
