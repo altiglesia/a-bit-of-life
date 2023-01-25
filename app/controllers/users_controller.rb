@@ -30,7 +30,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        byebug
         params.require(:user).permit(:username, :email, :password, :password_confirmation, :quiz_results, :current_cable_path)
     end
 
