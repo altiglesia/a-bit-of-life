@@ -21,7 +21,7 @@ function CableJunctionPoint ({ cableObj }) {
 
     function sendCurrentCablePath() {
         // console.log(name)
-        fetch("/api/v1/profile", {
+        fetch("/profile", {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

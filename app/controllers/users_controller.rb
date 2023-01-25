@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApplicationController
+class UsersController < ApplicationController
 # skip_before_action :authorized, only: [:create]
 # This controller is responsible for creating and saving new users to the database
     def profile

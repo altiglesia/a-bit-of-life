@@ -29,7 +29,7 @@ function SignUpForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("/api/v1/users", {
+        fetch("/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

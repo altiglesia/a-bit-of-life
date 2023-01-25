@@ -51,7 +51,7 @@ function Quiz() {
 
     function updateQuizResult(binaryNumberOfCharacter) {
         console.log(binaryNumberOfCharacter)
-        fetch("/api/v1/profile", {
+        fetch("/profile", {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
