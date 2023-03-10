@@ -42,12 +42,14 @@ features I am looking to implement in the future:
 
 # how to play
 
+### visit [bitoflife.onrender.com](https://abitoflife.onrender.com/)
+
 <p align="center">
 <img alt="A Bit of Life Keyboard" src="https://user-images.githubusercontent.com/111707308/223498691-4861e17d-58df-42e0-be75-f3cb5b144405.gif" width="45%">
 </p>
 
-visit [bitoflife.onrender.com](https://abitoflife.onrender.com/)
+# credits and thanks
 
-# credits
-
-
+- my instructor at Flatiron School in NYC, Chris K. Erlendson, for guidance
+- my tech coach Charlie Kozey, for help and inspiration
+- Raquel Román-Rodriguez for the awesome blog post on keyboard custom hooks in ReactJS and CSS tricks to make the sprite move: https://dev.to/raquii/using-two-dimensional-arrays-to-build-a-walkable-game-map-in-react-22e7 
