@@ -29,6 +29,25 @@ challenges I faced and how I resolved them:
 
 </ol>
 
-Features I am hoping to implement:
-
+features I am looking to implement in the future:
+<ol>
+  <li>scaling database for application optimization.</li>
+  <li>adding a range of different kinds of Bits. I am currently designing other colors and plan to add the choice option at the beginning (think early Pokemon games).</li>
+  <li>more maps</li>
+  <li>a longer plotline, which is also in the works</li>
+  <li>live chat feature with web sockets</li>
+  <li>graphics using Three.js</li>
+</ol>
 </p>
+
+# how to play
+
+<p align="center">
+<img alt="A Bit of Life Keyboard" src="https://user-images.githubusercontent.com/111707308/223498691-4861e17d-58df-42e0-be75-f3cb5b144405.gif" width="45%">
+</p>
+
+visit [bitoflife.onrender.com](https://abitoflife.onrender.com/)
+
+# credits
+
+
