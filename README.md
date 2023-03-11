@@ -8,7 +8,7 @@
 Started in December 2022, <i> a bit of life </i> is an 8-bit, 2D role-playing game designed and programmed by Alexandra Iglesia. The player controls a "Bit": the state of being an average person begins life as during a post-apocalyptic future. The player must travel along the global, fiber optic submarine cable systems and landing stations along the ocean floor in order to meet other Bits. The game was made in three weeks as a final capstone project for Flatiron School's Software Engineering program, and currently consists of an introduction sequence, personality quiz, and keyboard movement.
 </p>
 
-# description
+# about the game
 <p>
 technologies:
 <ol>
