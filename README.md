@@ -1,4 +1,4 @@
-# a bit of life
+# a bit of life - a 2D RPG for pixel art lovers 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/111707308/224375136-8adb35b3-be08-45cd-aae4-fdb966adaaa3.gif" alt="landing page" />
