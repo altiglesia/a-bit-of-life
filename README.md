@@ -24,7 +24,7 @@ technologies:
 
 challenges I faced and how I resolved them:
 <ol>
-  <li>TeleGeography recently privatized the GitHub page where they publicly shared the API and code to their <a href="https://www.submarinecablemap.com/">Submarine Cable Map</a>. In the end, I found a project that still fetches from the API <a href="https://github.com/vasturiano/globe.gl/blob/master/example/submarine-cables/index.html">here</a>. </li>
+  <li>TeleGeography recently made their GitHub page where they once shared the API and code to their <a href="https://www.submarinecablemap.com/">Submarine Cable Map private</a>. In order to overcome this, I found a project within the GitHub community that still fetches from the API <a href="https://github.com/vasturiano/globe.gl/blob/master/example/submarine-cables/index.html">here</a>. </li>
   <li>For MacBook Pro M1 users, the Tiled application doesn’t respond after a couple of edits to a map. At times, I had to wait an hour before the application started to work again; other times, it didn't respond for a whole night. This kept me from creating more 2D tiled maps efficiently and I ultimately needed to pivot towards other features in order to reach my deadlines. See bug issue <a href="https://discourse.mapeditor.org/t/it-cant-wrok-well-on-apple-m1-pro-monterry/5814">here</a>.</li>
 
 </ol>
