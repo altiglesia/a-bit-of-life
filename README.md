@@ -42,7 +42,7 @@ features I am looking to implement in the future:
 
 # how to play
 
-### visit [bitoflife.onrender.com](https://abitoflife.onrender.com/)
+### visit [abitoflife.onrender.com](https://abitoflife.onrender.com/)
 
 <p align="center">
 <img alt="A Bit of Life Keyboard" src="https://user-images.githubusercontent.com/111707308/223498691-4861e17d-58df-42e0-be75-f3cb5b144405.gif" width="45%">
